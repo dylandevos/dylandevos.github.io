@@ -6,4 +6,20 @@
   gtag('js', new Date());
 
   gtag('config', 'G-MEXS11MEQE');
+</script><script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var href = link.getAttribute('href') || '';
+      var text = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100);
+      var eventName = 'site_click';
+      if (href.indexOf('mailto:') === 0) eventName = 'contact_email_click';
+      else if (href.indexOf('/viesyma/') === 0 || href === '/viesyma/') eventName = 'viesyma_click';
+      else if (href.indexOf('/viesyma/support') === 0) eventName = 'support_click';
+      else if (href.indexOf('/actualites') === 0) eventName = 'news_click';
+      else if (href.indexOf('#apps') === 0) eventName = 'applications_click';
+      gtag('event', eventName, {link_text: text, link_url: href});
+    });
+  });
+});
 </script></head><body><div class="wrap"><nav class="nav"><a class="brand" href="/">DylanDevOS</a><div class="navlinks"><a href="/actualites.html">Actualités</a><a href="#apps">Applications</a><a href="#about">À propos</a><a href="#contact">Contact</a></div></nav><main><section class="hero"><div class="eyebrow">DylanDevOS · Studio indépendant</div><h1>Des expériences<br>pensées pour iOS.</h1><p>Bienvenue sur DylanDevOS, le portail officiel de mes applications et projets numériques. Découvrez les applications publiées, leur assistance et leurs informations officielles.</p><div class="buttons"><a class="btn primary plausible-event-name=Discover+Applications" href="#apps">Découvrir les applications</a><a class="btn" href="/viesyma/support.html">Support</a></div></section><section class="section" id="apps"><div class="eyebrow">Catalogue</div><h2>Applications</h2><p>Découvrez les applications actuellement présentées par DylanDevOS.</p><div class="grid"><a class="card featured" href="/viesyma/"><span class="tag">Viesyma · Bientôt disponible</span><h3>Viesyma</h3><p>Une simulation de vie où les choix construisent une histoire différente à chaque partie.</p><span class="card-link">Découvrir Viesyma →</span></a><div class="card"><span class="tag">Prochainement</span><h3>Un nouveau projet arrive</h3><p>Une nouvelle application DylanDevOS est actuellement en préparation.</p></div><div class="card"><span class="tag">Prochainement</span><h3>Un autre projet arrive</h3><p>Un autre projet est actuellement en développement. Plus d'informations seront communiquées lors de son annonce officielle.</p></div></div></section><section class="section split" id="about"><div><div class="eyebrow">À propos</div><h2>DylanDevOS</h2></div><div><p>DylanDevOS centralise les applications développées pour les plateformes Apple et les futurs projets numériques.</p><p>Les nouveaux projets seront présentés uniquement au moment où leurs informations pourront être rendues publiques.</p></div></section><section class="section" id="contact"><div class="eyebrow">Contact</div><h2>Besoin d'aide ?</h2><p>Pour Viesyma ou une future application, l'équipe support peut être contactée par e-mail.</p><div class="buttons"><a class="btn primary" href="mailto:app.dylandevos@outlook.com">app.dylandevos@outlook.com</a><a class="btn" href="/viesyma/support.html">Centre de support Viesyma</a></div></section></main><footer class="footer"><div class="footerlinks"><a href="/">DylanDevOS</a><a href="/viesyma/">Viesyma</a><a href="/viesyma/privacy.html">Confidentialité</a><a href="/viesyma/terms.html">Conditions</a><a href="/viesyma/support.html">Support</a></div>© 2026 DylanDevOS — Tous droits réservés.</footer></div></body></html>
