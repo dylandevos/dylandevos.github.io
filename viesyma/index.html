@@ -1,28 +1,103 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Viesyma — simulation de vie sur iPhone."><meta name="theme-color" content="#07080c"><title>Viesyma — Simulation de vie</title><link rel="stylesheet" href="/style.css"><!-- Google tag (gtag.js) -->
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Viesyma — une simulation de vie sur iPhone où chaque choix peut changer votre histoire. Créez votre personnage, explorez ses relations, sa carrière, son argent et bien plus encore.">
+<meta name="theme-color" content="#07080c">
+<title>Viesyma — Une vie, des choix, mille histoires</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+.viesyma-hero{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:42px 34px;margin-bottom:34px;background:radial-gradient(circle at 78% 20%,rgba(168,85,247,.25),transparent 34%),radial-gradient(circle at 15% 90%,rgba(59,130,246,.18),transparent 36%),linear-gradient(135deg,#0b1020,#11152a 55%,#17102a);box-shadow:0 24px 70px rgba(0,0,0,.28)}
+.viesyma-hero:before{content:"";position:absolute;inset:auto -80px -140px auto;width:360px;height:360px;border-radius:50%;background:rgba(236,72,153,.13);filter:blur(40px)}
+.hero-copy{position:relative;z-index:2;max-width:650px}.hero-copy h1{font-size:clamp(3.5rem,9vw,6.8rem);line-height:.9;margin:8px 0 18px;letter-spacing:-.07em;background:linear-gradient(90deg,#fff,#c4b5fd,#f9a8d4);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy .lead{font-size:clamp(1.05rem,2vw,1.35rem);max-width:590px}.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}.hero-badge{padding:9px 13px;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(255,255,255,.06);font-size:.9rem}
+.hero-characters{position:absolute;right:-10px;bottom:-18px;width:min(48%,520px);height:390px;pointer-events:none}.character{position:absolute;bottom:0;filter:drop-shadow(0 20px 20px rgba(0,0,0,.3));transform-origin:bottom center}.character svg{display:block}.char1{right:25%;z-index:4;transform:scale(1.05)}.char2{right:4%;z-index:3;transform:scale(.9)}.char3{right:50%;z-index:2;transform:scale(.82)}.char4{right:68%;z-index:1;transform:scale(.72)}
+.char-glow{position:absolute;bottom:20px;right:20%;width:300px;height:130px;border-radius:50%;background:linear-gradient(90deg,rgba(59,130,246,.15),rgba(236,72,153,.18));filter:blur(35px)}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:44px 0 18px}.section-title h2{margin:0}.section-title p{margin:0;max-width:520px}
+.showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.showcase-card{position:relative;overflow:hidden;min-height:205px;padding:20px;border-radius:22px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));transition:transform .25s ease,border-color .25s ease}.showcase-card:hover{transform:translateY(-5px);border-color:rgba(167,139,250,.45)}.showcase-card .icon{font-size:1.8rem}.showcase-card h3{margin:10px 0 6px}.showcase-card p{margin:0;font-size:.92rem}.card-orb{position:absolute;right:-35px;bottom:-50px;width:150px;height:150px;border-radius:50%;background:rgba(139,92,246,.14);filter:blur(4px)}
+.character-section{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;align-items:center;margin-top:42px;padding:28px;border-radius:28px;background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(236,72,153,.08));border:1px solid rgba(255,255,255,.08)}.character-wall{display:flex;align-items:end;justify-content:center;min-height:310px;position:relative}.character-wall .character{position:relative;right:auto;transform:scale(.75);margin:0 -28px}.character-wall .char1{transform:scale(.86);z-index:4}.character-wall .char2{transform:scale(.76);z-index:3}.character-wall .char3{transform:scale(.7);z-index:2}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:18px;border-radius:20px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08)}.step-number{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);font-weight:800;margin-bottom:12px}.step strong{display:block;margin-bottom:6px}.step span{font-size:.9rem}
+.cta{margin-top:42px;text-align:center;padding:42px 24px;border-radius:28px;background:linear-gradient(135deg,#17112c,#101b35);border:1px solid rgba(167,139,250,.2);box-shadow:0 20px 60px rgba(0,0,0,.22)}.cta h2{margin-top:0}.appstore{display:inline-flex;align-items:center;gap:12px;margin-top:12px;padding:13px 19px;border-radius:14px;background:#fff;color:#08090c;text-decoration:none;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.25)}.appstore small{display:block;font-weight:500;font-size:.68rem;text-align:left}.appstore b{display:block;font-size:1.1rem}
+.notice{margin:18px 0 0}
+@media(max-width:900px){.showcase-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.character-section{grid-template-columns:1fr}.hero-characters{opacity:.7;width:60%}}
+@media(max-width:650px){.viesyma-hero{padding:30px 22px}.hero-characters{position:relative;right:auto;bottom:auto;width:100%;height:240px;margin-top:10px;opacity:1}.char1{right:28%}.char2{right:0}.char3{right:53%}.char4{right:70%}.showcase-grid,.steps{grid-template-columns:1fr}.character-wall{min-height:250px;transform:scale(.86)}}
+</style>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEXS11MEQE"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MEXS11MEQE');
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){var href=link.getAttribute('href')||'',text=(link.textContent||'').trim().replace(/\s+/g,' ').slice(0,100),eventName='site_click';if(href.indexOf('mailto:')===0)eventName='contact_email_click';else if(href.indexOf('/viesyma/support')===0)eventName='support_click';else if(href.indexOf('/viesyma/privacy')===0)eventName='privacy_click';else if(href.indexOf('/viesyma/terms')===0)eventName='terms_click';else if(href.indexOf('/viesyma/')===0||href==='/viesyma/')eventName='viesyma_click';else if(href.indexOf('/actualites')===0)eventName='news_click';else if(href.indexOf('#apps')===0)eventName='applications_click';gtag('event',eventName,{link_text:text,link_url:href})})})});
+</script>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav"><a class="brand" href="/">DylanDevOS</a><div class="navlinks"><a href="/">Applications</a><a href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a href="/viesyma/support.html">Support</a></div></nav>
+<main class="article">
 
-  gtag('config', 'G-MEXS11MEQE');
-</script><script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      var href = link.getAttribute('href') || '';
-      var text = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100);
-      var eventName = 'site_click';
-      if (href.indexOf('mailto:') === 0) eventName = 'contact_email_click';
-      else if (href.indexOf('/viesyma/') === 0 || href === '/viesyma/') eventName = 'viesyma_click';
-      else if (href.indexOf('/viesyma/support') === 0) eventName = 'support_click';
-      else if (href.indexOf('/actualites') === 0) eventName = 'news_click';
-      else if (href.indexOf('#apps') === 0) eventName = 'applications_click';
-      gtag('event', eventName, {link_text: text, link_url: href});
-    });
-  });
-});
-</script></head><body><div class="wrap"><nav class="nav"><a class="brand" href="/">DylanDevOS</a><div class="navlinks"><a href="/">Applications</a><a href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a href="/viesyma/support.html">Support</a></div></nav><main class="article"><div class="eyebrow">DylanDevOS · Jeu iOS</div><h1>Viesyma</h1><p class="lead">Une simulation de vie où chaque décision peut modifier votre parcours.</p><div class="notice"><strong>Bientôt sur l'App Store.</strong><br>Le lien de téléchargement sera ajouté dès la publication officielle.</div><div class="feature-grid"><div class="mini-card"><strong>Votre histoire</strong><span>Créez une vie et faites évoluer votre personnage année après année.</span></div><div class="mini-card"><strong>Carrière & argent</strong><span>Études, métiers, revenus, dépenses, patrimoine et décisions financières.</span></div><div class="mini-card"><strong>Relations</strong><span>Famille, amour, enfants, amis et événements qui font évoluer votre vie.</span></div><div class="mini-card"><strong>Événements</strong><span>Des situations et choix qui peuvent changer le cours de votre histoire.</span></div><div class="mini-card"><strong>Entreprise</strong><span>Développez des projets et construisez votre patrimoine professionnel.</span></div><div class="mini-card"><strong>Contenus supplémentaires</strong><span>Des expériences et extensions pour enrichir votre partie.</span></div></div><h2>Notice d'utilisation</h2>
+<section class="viesyma-hero">
+<div class="hero-copy">
+<div class="eyebrow">DylanDevOS · Jeu iOS</div>
+<h1>Viesyma</h1>
+<p class="lead"><strong>Une vie, des choix, mille histoires.</strong><br>Créez votre personnage, faites vos choix et découvrez jusqu'où votre vie peut vous mener.</p>
+<div class="hero-badges"><span class="hero-badge">✨ Simulation de vie</span><span class="hero-badge">🎮 Des possibilités à explorer</span><span class="hero-badge">❤️ Des histoires uniques</span></div>
+<div class="notice"><strong>Bientôt sur l’App Store.</strong><br>Le lien de téléchargement sera ajouté dès la publication officielle.</div>
+</div>
+<div class="hero-characters" aria-hidden="true">
+<div class="char-glow"></div>
+<div class="character char4">
+<svg width="150" height="260" viewBox="0 0 150 260"><path d="M42 105c-13 26-15 62-7 101l-10 38h100l-10-38c8-39 6-75-7-101z" fill="#4338ca"/><circle cx="75" cy="72" r="43" fill="#f3c5a8"/><path d="M32 73c-3-43 21-67 53-65 37 2 50 30 37 67-9-22-24-34-48-38-12 23-28 34-42 36z" fill="#5b3427"/><circle cx="59" cy="77" r="4" fill="#1f2937"/><circle cx="91" cy="77" r="4" fill="#1f2937"/><path d="M64 96q11 8 22 0" fill="none" stroke="#9a4f48" stroke-width="3" stroke-linecap="round"/><path d="M43 143h64" stroke="#fff" stroke-opacity=".2" stroke-width="3"/></svg>
+</div>
+<div class="character char3">
+<svg width="165" height="285" viewBox="0 0 165 285"><path d="M40 116c-8 34-8 72-2 108l-16 40h121l-16-40c6-36 6-74-2-108z" fill="#059669"/><circle cx="82" cy="76" r="45" fill="#d9a37f"/><path d="M37 70C33 26 61 6 92 9c35 4 51 32 35 72-11-20-29-29-55-29-9 14-21 23-35 18z" fill="#171717"/><circle cx="65" cy="80" r="4" fill="#111827"/><circle cx="99" cy="80" r="4" fill="#111827"/><path d="M70 99q12 9 24 0" fill="none" stroke="#8b4b43" stroke-width="3" stroke-linecap="round"/><path d="M48 142h69" stroke="#fff" stroke-opacity=".2" stroke-width="3"/></svg>
+</div>
+<div class="character char2">
+<svg width="180" height="310" viewBox="0 0 180 310"><path d="M43 125c-9 38-9 79-1 119l-17 44h130l-17-44c8-40 8-81-1-119z" fill="#ec4899"/><circle cx="90" cy="82" r="49" fill="#f0c1a5"/><path d="M40 81C35 33 62 7 96 9c42 3 55 38 39 79-10-24-27-40-52-43-8 22-21 34-43 36z" fill="#b45309"/><path d="M50 41q39-42 80 0" fill="none" stroke="#92400e" stroke-width="13" stroke-linecap="round"/><circle cx="72" cy="87" r="4" fill="#111827"/><circle cx="108" cy="87" r="4" fill="#111827"/><path d="M75 108q15 10 30 0" fill="none" stroke="#9a4f48" stroke-width="3" stroke-linecap="round"/><path d="M55 153h70" stroke="#fff" stroke-opacity=".2" stroke-width="3"/></svg>
+</div>
+<div class="character char1">
+<svg width="205" height="350" viewBox="0 0 205 350"><path d="M48 142c-12 43-11 91-2 137l-19 52h151l-19-52c9-46 10-94-2-137z" fill="#111827"/><path d="M72 142h66l17 189H51z" fill="#1d4ed8" opacity=".45"/><circle cx="102" cy="91" r="55" fill="#d99a73"/><path d="M45 92C37 38 69 4 108 7c46 3 65 40 48 88-13-27-32-43-59-47-11 24-27 39-52 44z" fill="#2b1b15"/><path d="M52 61q24-45 86-27" fill="none" stroke="#3f241b" stroke-width="14" stroke-linecap="round"/><circle cx="81" cy="98" r="5" fill="#111827"/><circle cx="123" cy="98" r="5" fill="#111827"/><path d="M84 123q18 12 36 0" fill="none" stroke="#8b4b43" stroke-width="4" stroke-linecap="round"/><path d="M63 171h78" stroke="#fff" stroke-opacity=".2" stroke-width="4"/></svg>
+</div>
+</div>
+</section>
+
+<div class="section-title"><div><div class="eyebrow">Votre future vie</div><h2>Tout peut commencer ici.</h2></div><p>Une simulation pensée pour vous laisser construire votre propre histoire, à votre rythme.</p></div>
+<div class="showcase-grid">
+<div class="showcase-card"><div class="icon">🧑‍🎨</div><h3>Créez votre personnage</h3><p>Apparence, âge et personnalité : commencez avec le personnage qui vous ressemble.</p><div class="card-orb"></div></div>
+<div class="showcase-card"><div class="icon">🎓</div><h3>Tracez votre parcours</h3><p>Étudiez, travaillez, changez de voie et construisez votre avenir.</p><div class="card-orb"></div></div>
+<div class="showcase-card"><div class="icon">💞</div><h3>Vivez vos relations</h3><p>Rencontres, famille, amitiés, amour et moments qui donnent vie à votre histoire.</p><div class="card-orb"></div></div>
+<div class="showcase-card"><div class="icon">💰</div><h3>Gérez votre vie</h3><p>Revenus, dépenses, projets et patrimoine : vos décisions ont des conséquences.</p><div class="card-orb"></div></div>
+<div class="showcase-card"><div class="icon">🏢</div><h3>Développez vos projets</h3><p>Faites évoluer vos ambitions et explorez de nouvelles possibilités professionnelles.</p><div class="card-orb"></div></div>
+<div class="showcase-card"><div class="icon">✈️</div><h3>Explorez le monde</h3><p>Faites évoluer votre quotidien et laissez votre personnage découvrir de nouveaux horizons.</p><div class="card-orb"></div></div>
+<div class="showcase-card"><div class="icon">🎯</div><h3>Faites vos choix</h3><p>Chaque étape peut ouvrir une nouvelle direction. À vous de décider laquelle suivre.</p><div class="card-orb"></div></div>
+<div class="showcase-card"><div class="icon">❓</div><h3>Découvrez la suite</h3><p>Certaines possibilités ne se révèlent qu'en jouant. Tout ne se dévoile pas dès le départ.</p><div class="card-orb"></div></div>
+</div>
+
+<section class="character-section">
+<div class="character-wall" aria-hidden="true">
+<div class="character char3"><svg width="150" height="270" viewBox="0 0 150 270"><path d="M38 112c-7 35-7 72 0 111l-15 38h104l-15-38c7-39 7-76 0-111z" fill="#7c3aed"/><circle cx="75" cy="73" r="42" fill="#f1c4a8"/><path d="M33 75C29 30 54 7 84 9c36 2 48 31 35 67-10-21-25-33-46-37-12 22-25 33-40 36z" fill="#8b5e3c"/><circle cx="59" cy="78" r="4" fill="#111827"/><circle cx="91" cy="78" r="4" fill="#111827"/><path d="M64 97q11 8 22 0" fill="none" stroke="#9a4f48" stroke-width="3" stroke-linecap="round"/></svg></div>
+<div class="character char2"><svg width="165" height="290" viewBox="0 0 165 290"><path d="M39 118c-8 37-8 76-1 116l-16 40h119l-16-40c7-40 7-79-1-116z" fill="#db2777"/><circle cx="82" cy="77" r="45" fill="#c98f6b"/><path d="M37 78C31 35 58 8 88 10c39 2 52 34 39 69-12-20-28-32-50-35-9 19-21 30-40 34z" fill="#262626"/><circle cx="65" cy="83" r="4" fill="#111827"/><circle cx="99" cy="83" r="4" fill="#111827"/><path d="M70 103q12 9 24 0" fill="none" stroke="#8b4b43" stroke-width="3" stroke-linecap="round"/></svg></div>
+<div class="character char1"><svg width="185" height="320" viewBox="0 0 185 320"><path d="M44 127c-9 41-9 83-1 126l-17 48h132l-17-48c8-43 8-85-1-126z" fill="#2563eb"/><circle cx="92" cy="84" r="48" fill="#efc09e"/><path d="M40 84C35 35 62 9 96 10c42 2 57 35 42 75-11-22-27-35-51-39-9 21-23 34-47 38z" fill="#4b2e20"/><circle cx="74" cy="89" r="4" fill="#111827"/><circle cx="110" cy="89" r="4" fill="#111827"/><path d="M78 109q14 10 28 0" fill="none" stroke="#8b4b43" stroke-width="3" stroke-linecap="round"/></svg></div>
+</div>
+<div><div class="eyebrow">Des personnages, des histoires</div><h2>Donnez vie à votre personnage.</h2><p>Dans Viesyma, votre personnage n'est pas juste un avatar. Il évolue, rencontre des personnes, construit des relations, travaille, gagne de l'argent, change de projets et traverse des événements inattendus.</p><p>Vous commencez une vie. Ensuite, <strong>c'est à vous d'écrire la suite.</strong></p></div>
+</section>
+
+<div class="section-title"><div><div class="eyebrow">En quelques étapes</div><h2>Comment ça fonctionne ?</h2></div><p>Un principe simple, puis une infinité de chemins possibles.</p></div>
+<div class="steps">
+<div class="step"><span class="step-number">1</span><strong>Créez</strong><span>Façonnez votre personnage et commencez une nouvelle vie.</span></div>
+<div class="step"><span class="step-number">2</span><strong>Choisissez</strong><span>Prenez des décisions et ouvrez de nouvelles possibilités.</span></div>
+<div class="step"><span class="step-number">3</span><strong>Vivez</strong><span>Études, travail, relations, argent et événements évoluent avec le temps.</span></div>
+<div class="step"><span class="step-number">4</span><strong>Découvrez</strong><span>Explorez progressivement tout ce que votre histoire peut devenir.</span></div>
+</div>
+
+<section class="cta">
+<div class="eyebrow">Bientôt disponible</div>
+<h2>Prêt à vivre votre histoire ?</h2>
+<p>Viesyma arrive prochainement sur l'App Store. Préparez-vous à créer une vie qui ne ressemblera à aucune autre.</p>
+<a class="appstore" href="/viesyma/support.html" aria-label="Viesyma bientôt sur l'App Store"><span style="font-size:2rem"></span><span><small>Bientôt disponible sur</small><b>l’App Store</b></span></a>
+</section>
+
+<h2>Notice d'utilisation</h2>
 <p><strong>Bienvenue dans Viesyma.</strong> Le principe est simple : créez votre personnage, vivez sa vie et voyez jusqu'où vos choix peuvent vous mener.</p>
 <div class="feature-grid">
 <div class="mini-card"><strong>Créer</strong><span>Commencez une nouvelle vie et façonnez votre personnage.</span></div>
@@ -31,4 +106,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="mini-card"><strong>Explorer</strong><span>Découvrez progressivement les possibilités de Viesyma. Tout ne se révèle pas dès le début.</span></div>
 </div>
 <p><strong>Le meilleur conseil ?</strong> Lancez-vous et expérimentez. Certaines surprises se découvrent uniquement en jouant.</p>
-<h2>Une vie, des milliers de possibilités</h2><p>Viesyma est conçu comme une expérience de simulation évolutive : votre personnage grandit, travaille, construit des relations, gère son argent et traverse des événements différents selon ses décisions.</p><div class="buttons"><a class="btn primary" href="/viesyma/support.html">Assistance</a><a class="btn" href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a class="btn" href="/viesyma/terms.html">Conditions</a></div></main><footer class="footer"><div class="footerlinks"><a href="/">← DylanDevOS</a><a href="/viesyma/support.html">Support Viesyma</a><a href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a href="/viesyma/terms.html">Conditions d’utilisation</a></div>© 2026 DylanDevOS — Viesyma</footer></div></body></html>
+
+<div class="buttons"><a class="btn primary" href="/viesyma/support.html">Assistance</a><a class="btn" href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a class="btn" href="/viesyma/terms.html">Conditions</a></div>
+</main>
+<footer class="footer"><div class="footerlinks"><a href="/">← DylanDevOS</a><a href="/viesyma/support.html">Support Viesyma</a><a href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a href="/viesyma/terms.html">Conditions d’utilisation</a></div>© 2026 DylanDevOS — Viesyma</footer>
+</div>
+</body>
+</html>
