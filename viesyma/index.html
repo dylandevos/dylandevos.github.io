@@ -71,13 +71,12 @@
 }
 .character-lineup{display:grid;grid-template-columns:repeat(3,180px);gap:10px;justify-content:center;align-items:center}.character-lineup img{width:180px;height:180px;object-fit:cover;display:block;border-radius:18px;image-rendering:auto}.hero-characters .character-lineup{grid-template-columns:repeat(3,90px);gap:6px}.hero-characters .character-lineup img{width:90px;height:90px;border-radius:12px}@media(max-width:900px){.character-lineup{grid-template-columns:repeat(3,1fr);width:min(100%,420px);gap:8px}.character-lineup img{width:100%;height:auto;aspect-ratio:1}.hero-characters .character-lineup{grid-template-columns:repeat(3,1fr);width:min(100%,330px)}.hero-characters .character-lineup img{width:100%;height:auto;aspect-ratio:1}}@media(max-width:650px){.character-lineup{grid-template-columns:repeat(2,1fr);width:min(100%,340px)}.hero-characters .character-lineup{grid-template-columns:repeat(3,1fr);width:min(100%,300px)}}
 
-/* Viesyma — portraits séparés par sprite haute définition, sans agrandissement destructif */
-.viesyma-character-sprite{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:min(100%,420px);aspect-ratio:3/2;filter:drop-shadow(0 16px 20px rgba(0,0,0,.3))}
-.vchar{display:block;min-width:0;aspect-ratio:1;border-radius:18px;background-image:url('/viesyma/assets/viesyma-characters-hq.webp?v=11');background-repeat:no-repeat;background-size:300% 200%;background-color:#111;overflow:hidden;image-rendering:auto}
-.vchar-1{background-position:0 0}.vchar-2{background-position:50% 0}.vchar-3{background-position:100% 0}.vchar-4{background-position:0 100%}.vchar-5{background-position:50% 100%}.vchar-6{background-position:100% 100%}
-.hero-characters .viesyma-character-sprite{width:min(100%,330px);gap:6px}.hero-characters .vchar{border-radius:12px}
-.character-wall .viesyma-character-sprite{width:min(100%,420px)}
-@media(max-width:650px){.viesyma-character-sprite{width:min(100%,340px);gap:7px}.hero-characters .viesyma-character-sprite{width:min(100%,300px)}}
+/* Viesyma — affichage portrait fiable */
+.viesyma-character-sprite{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:300px}
+.viesyma-character-sprite img{display:block;width:min(100%,520px);height:auto;max-height:430px;object-fit:contain;border-radius:24px;filter:drop-shadow(0 18px 24px rgba(0,0,0,.36));image-rendering:auto}
+.hero-characters .viesyma-character-sprite{min-height:0}.hero-characters .viesyma-character-sprite img{width:min(100%,330px);max-height:360px}
+@media(max-width:900px){.viesyma-character-sprite{min-height:0}.viesyma-character-sprite img{width:min(100%,420px)}}
+@media(max-width:650px){.viesyma-character-sprite img{width:min(100%,340px);border-radius:18px}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEXS11MEQE"></script>
@@ -101,10 +100,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
 <div class="hero-badges"><span class="hero-badge">✨ Simulation de vie</span><span class="hero-badge">🎮 Des possibilités à explorer</span><span class="hero-badge">❤️ Des histoires uniques</span></div>
 <div class="notice"><strong>Bientôt sur l’App Store.</strong><br>Le lien de téléchargement sera ajouté dès la publication officielle.</div>
 </div>
-<div class="hero-characters" aria-hidden="true"><div class="viesyma-character-sprite" aria-hidden="true">
-  <span class="vchar vchar-1"></span><span class="vchar vchar-2"></span><span class="vchar vchar-3"></span>
-  <span class="vchar vchar-4"></span><span class="vchar vchar-5"></span><span class="vchar vchar-6"></span>
-</div></div>
+<div class="hero-characters" aria-hidden="true"><div class="viesyma-character-sprite" aria-hidden="true"><img src="/viesyma/assets/viesyma-characters-hq.jpg?v=13" alt=""></div></div>
 </section>
 
 <div class="section-title"><div><div class="eyebrow">Votre future vie</div><h2>Tout peut commencer ici.</h2></div><p>Une simulation pensée pour vous laisser construire votre propre histoire, à votre rythme.</p></div>
@@ -120,10 +116,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
 </div>
 
 <section class="character-section">
-<div class="character-wall" aria-hidden="true"><div class="viesyma-character-sprite" aria-hidden="true">
-  <span class="vchar vchar-1"></span><span class="vchar vchar-2"></span><span class="vchar vchar-3"></span>
-  <span class="vchar vchar-4"></span><span class="vchar vchar-5"></span><span class="vchar vchar-6"></span>
-</div></div>
+<div class="character-wall" aria-hidden="true"><div class="viesyma-character-sprite" aria-hidden="true"><img src="/viesyma/assets/viesyma-characters-hq.jpg?v=13" alt=""></div></div></div>
 <div><div class="eyebrow">Des personnages, des histoires</div><h2>Donnez vie à votre personnage.</h2><p>Dans Viesyma, votre personnage n'est pas juste un avatar. Il évolue, rencontre des personnes, construit des relations, travaille, gagne de l'argent, change de projets et traverse des événements inattendus.</p><p>Vous commencez une vie. Ensuite, <strong>c'est à vous d'écrire la suite.</strong></p></div>
 </section>
 
