@@ -39,6 +39,16 @@ body{background:radial-gradient(circle at 75% 5%,rgba(139,92,246,.16),transparen
 .footer{margin-top:24px}
 @media(max-width:1000px){.hero{min-height:0}.hero-copy{width:100%;padding:52px 28px 34px}.hero-art{position:relative;right:auto;top:auto;width:100%;height:500px}.hero-art img{height:100%;max-width:100%;width:auto}.hero-art:after{background:linear-gradient(180deg,rgba(7,9,22,.1),#070916 92%)}.features{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.nav{top:6px}.navlinks{display:none}.hero{border-radius:24px}.hero-copy{padding:38px 20px 22px}.hero h1{font-size:clamp(3.8rem,18vw,5.5rem)}.hero-art{height:420px}.features,.dlc-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.section{padding:24px 18px}}
+</style><style id="viesyma-responsive-overhaul">
+.hero{min-height:auto;position:relative;overflow:hidden;border-radius:30px}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,17,.94) 0%,rgba(5,7,17,.68) 32%,rgba(5,7,17,.08) 68%,rgba(5,7,17,.18) 100%),linear-gradient(0deg,rgba(5,7,17,.42),transparent 38%);pointer-events:none}
+.hero-art img{display:block;width:100%;height:100%;max-width:1536px;margin:auto;object-fit:cover;object-position:center center;transform:none;filter:none}
+.hero-copy{position:relative;z-index:3;width:55%;min-height:720px;padding:76px 42px 60px 58px;display:flex;flex-direction:column;justify-content:center}
+.features{position:relative;z-index:4}
+.section,.cta{position:relative;z-index:4}
+@media(max-width:1000px){.hero-copy{width:100%;min-height:620px;padding:55px 30px 45px;background:linear-gradient(180deg,rgba(5,7,17,.82),rgba(5,7,17,.35) 55%,rgba(5,7,17,.76))}.hero-art img{object-fit:cover}.hero-art:after{background:linear-gradient(180deg,rgba(5,7,17,.55),rgba(5,7,17,.18) 42%,rgba(5,7,17,.78) 100%)}}
+@media(max-width:650px){.hero{border-radius:22px}.hero-copy{min-height:620px;padding:34px 18px 30px;justify-content:flex-start}.hero h1{font-size:clamp(3.6rem,18vw,5.2rem)}.hero h2{font-size:1.15rem}.lead{font-size:.98rem}.hero-art img{object-position:center top}.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEXS11MEQE"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MEXS11MEQE');</script>
