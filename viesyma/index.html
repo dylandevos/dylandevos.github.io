@@ -62,7 +62,31 @@ body{background:radial-gradient(circle at 75% 5%,rgba(139,92,246,.16),transparen
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEXS11MEQE"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MEXS11MEQE');</script>
-</head>
+<style id="viesyma-clean-layout">
+.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+.nav{max-width:1180px;margin:18px auto 28px;display:flex;align-items:center;justify-content:space-between}
+.article{width:100%}
+.hero{min-height:0;text-align:center;background:radial-gradient(circle at 50% 0,rgba(139,92,246,.18),transparent 48%),linear-gradient(145deg,#0b0e21,#070914 72%);border-radius:32px;padding:0;box-shadow:0 30px 90px rgba(0,0,0,.38)}
+.hero:before{display:none}
+.hero-copy{width:100%;min-height:0;padding:90px 70px 82px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.hero h1{margin:16px 0 18px;font-size:clamp(4.8rem,10vw,8.5rem)}
+.hero h2{max-width:800px;margin:0 auto 22px}
+.lead{max-width:760px;margin:0 auto;font-size:1.08rem}
+.badges{justify-content:center;max-width:850px;margin:28px auto}
+.actions{justify-content:center}
+.stats{width:min(680px,100%);margin:30px auto 0}
+.features{width:100%;grid-template-columns:repeat(4,1fr);align-items:stretch}
+.feature{text-align:center;display:flex;flex-direction:column;align-items:center}
+.feature p{max-width:240px}
+.section{text-align:center;padding:42px 40px}
+.section p{margin-left:auto;margin-right:auto}
+.dlc-grid{grid-template-columns:repeat(3,1fr);text-align:left}
+.cta{text-align:center}
+.footer{text-align:center}
+.footerlinks{justify-content:center}
+@media(max-width:900px){.wrap{width:min(720px,calc(100% - 24px))}.nav{margin-top:12px}.navlinks{gap:12px}.hero-copy{padding:68px 30px 60px}.features{grid-template-columns:repeat(2,1fr)}.dlc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.wrap{width:calc(100% - 16px)}.nav{padding:12px;justify-content:center}.navlinks{display:none}.hero{border-radius:24px}.hero-copy{padding:55px 18px 45px}.hero h1{font-size:clamp(4rem,20vw,5.5rem)}.lead{font-size:1rem}.features,.dlc-grid{grid-template-columns:1fr}.section{padding:30px 18px}.stats{gap:8px}.stat{padding:12px 8px}}
+</style></head>
 <body>
 <div class="wrap">
 <nav class="nav"><a class="brand" href="/">DylanDevOS</a><div class="navlinks"><a href="/">Accueil</a><a href="#jeu">Le jeu</a><a href="#fonctionnalites">Fonctionnalités</a><a href="/viesyma/support.html">Support</a><a href="/viesyma/privacy.html">Confidentialité</a></div></nav>
@@ -77,7 +101,6 @@ body{background:radial-gradient(circle at 75% 5%,rgba(139,92,246,.16),transparen
 <div class="actions"><a class="btn primary" href="/viesyma/support.html"> &nbsp; Télécharger bientôt</a><a class="btn" href="#fonctionnalites">▶ &nbsp; Découvrir le jeu</a></div>
 <div class="stats"><div class="stat"><strong>+100</strong><span>événements de vie</span></div><div class="stat"><strong>∞</strong><span>histoires possibles</span></div><div class="stat"><strong>6+</strong><span>grands domaines de vie</span></div><div class="stat"><strong>iOS</strong><span>iPhone &amp; iPad</span></div></div>
 </div>
-<div class="hero-art"><img id="viesymaHeroPhoto" src="" alt="Viesyma — une vie, des choix, mille histoires"></div>
 </section>
 <section class="features" id="fonctionnalites">
 <div class="feature"><div class="icon">❤️</div><h3>Vivez vos relations</h3><p>Rencontres, amour, famille, enfants, amis, animaux et histoires passées.</p></div>
@@ -94,10 +117,5 @@ body{background:radial-gradient(circle at 75% 5%,rgba(139,92,246,.16),transparen
 </main>
 <footer class="footer"><div class="footerlinks"><a href="/">← DylanDevOS</a><a href="/viesyma/support.html">Support Viesyma</a><a href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a href="/viesyma/terms.html">Conditions d’utilisation</a></div>© 2026 DylanDevOS — Viesyma</footer>
 </div>
-<script>
-(async()=>{try{
-const parts=await Promise.all([1,2,3].map(n=>fetch('/viesyma/assets/hero-photo-'+n+'.txt?v=1').then(r=>r.text())));
-document.getElementById('viesymaHeroPhoto').src='data:image/webp;base64,'+parts.join('');
-}catch(e){console.error('Viesyma hero image',e)}})();
-</script></body>
+</body>
 </html>
