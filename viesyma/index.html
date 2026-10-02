@@ -3,148 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Viesyma — une simulation de vie sur iPhone où chaque choix peut changer votre histoire. Créez votre personnage, explorez ses relations, sa carrière, son argent et bien plus encore.">
-<meta name="theme-color" content="#07080c">
+<meta name="description" content="Viesyma — une vie, des choix, mille histoires.">
+<meta name="theme-color" content="#070816">
 <title>Viesyma — Une vie, des choix, mille histoires</title>
 <link rel="stylesheet" href="/style.css">
 <style>
-.viesyma-hero{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:42px 34px;margin-bottom:34px;background:radial-gradient(circle at 78% 20%,rgba(168,85,247,.25),transparent 34%),radial-gradient(circle at 15% 90%,rgba(59,130,246,.18),transparent 36%),linear-gradient(135deg,#0b1020,#11152a 55%,#17102a);box-shadow:0 24px 70px rgba(0,0,0,.28)}
-.viesyma-hero:before{content:"";position:absolute;inset:auto -80px -140px auto;width:360px;height:360px;border-radius:50%;background:rgba(236,72,153,.13);filter:blur(40px)}
-.hero-copy{position:relative;z-index:2;max-width:650px}.hero-copy h1{font-size:clamp(3.5rem,9vw,6.8rem);line-height:.9;margin:8px 0 18px;letter-spacing:-.07em;background:linear-gradient(90deg,#fff,#c4b5fd,#f9a8d4);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy .lead{font-size:clamp(1.05rem,2vw,1.35rem);max-width:590px}.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}.hero-badge{padding:9px 13px;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(255,255,255,.06);font-size:.9rem}
-.hero-characters{position:absolute;right:-2%;bottom:-28px;width:min(62%,650px);height:455px;pointer-events:none;isolation:isolate}.character-defs{position:absolute;width:0;height:0;overflow:hidden}.character{position:absolute;bottom:0;display:block;filter:drop-shadow(0 22px 20px rgba(0,0,0,.34));transform-origin:bottom center}.character svg{display:block;width:100%;height:auto;overflow:visible}.hero-person-1{right:27%;width:260px;z-index:6;transform:scale(1.03)}.hero-person-2{right:0;width:215px;z-index:4;transform:scale(.91)}.hero-person-3{right:47%;width:205px;z-index:3;transform:scale(.87)}.hero-person-4{right:68%;width:190px;z-index:2;transform:scale(.8)}.hero-person-5{right:14%;width:225px;z-index:5;transform:scale(.9)}.hero-person-6{right:5%;width:195px;z-index:4;transform:scale(.84)}.char-glow{position:absolute;bottom:8px;right:15%;width:420px;height:150px;border-radius:50%;background:linear-gradient(90deg,rgba(59,130,246,.14),rgba(236,72,153,.22));filter:blur(38px);z-index:-1}
-.character-section{display:grid;grid-template-columns:1fr 1.25fr;gap:28px;align-items:center;margin-top:42px;padding:30px;border-radius:28px;background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(236,72,153,.08));border:1px solid rgba(255,255,255,.08);overflow:hidden}.character-wall{display:flex;align-items:flex-end;justify-content:center;min-height:340px;position:relative;isolation:isolate}.wall-person{position:absolute;bottom:0;filter:drop-shadow(0 16px 15px rgba(0,0,0,.28));transform-origin:bottom center}.wall-person svg{display:block;width:100%;height:auto}.wall-1{width:205px;left:18%;z-index:5;transform:scale(.96)}.wall-2{width:175px;left:2%;z-index:3;transform:scale(.82)}.wall-3{width:180px;right:2%;z-index:4;transform:scale(.86)}.wall-4{width:165px;left:34%;z-index:2;transform:scale(.78)}.wall-5{width:180px;right:19%;z-index:3;transform:scale(.8)}.wall-6{width:160px;left:48%;z-index:1;transform:scale(.74)}
-.section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:44px 0 18px}.section-title h2{margin:0}.section-title p{margin:0;max-width:520px}
-.showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.showcase-card{position:relative;overflow:hidden;min-height:205px;padding:20px;border-radius:22px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));transition:transform .25s ease,border-color .25s ease}.showcase-card:hover{transform:translateY(-5px);border-color:rgba(167,139,250,.45)}.showcase-card .icon{font-size:1.8rem}.showcase-card h3{margin:10px 0 6px}.showcase-card p{margin:0;font-size:.92rem}.card-orb{position:absolute;right:-35px;bottom:-50px;width:150px;height:150px;border-radius:50%;background:rgba(139,92,246,.14);filter:blur(4px)}
-.character-section{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;align-items:center;margin-top:42px;padding:28px;border-radius:28px;background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(236,72,153,.08));border:1px solid rgba(255,255,255,.08)}.character-wall{display:flex;align-items:end;justify-content:center;min-height:310px;position:relative}.character-wall .character{position:relative;right:auto;transform:scale(.75);margin:0 -28px}.character-wall .char1{transform:scale(.86);z-index:4}.character-wall .char2{transform:scale(.76);z-index:3}.character-wall .char3{transform:scale(.7);z-index:2}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:18px;border-radius:20px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08)}.step-number{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);font-weight:800;margin-bottom:12px}.step strong{display:block;margin-bottom:6px}.step span{font-size:.9rem}
-.cta{margin-top:42px;text-align:center;padding:42px 24px;border-radius:28px;background:linear-gradient(135deg,#17112c,#101b35);border:1px solid rgba(167,139,250,.2);box-shadow:0 20px 60px rgba(0,0,0,.22)}.cta h2{margin-top:0}.appstore{display:inline-flex;align-items:center;gap:12px;margin-top:12px;padding:13px 19px;border-radius:14px;background:#fff;color:#08090c;text-decoration:none;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.25)}.appstore small{display:block;font-weight:500;font-size:.68rem;text-align:left}.appstore b{display:block;font-size:1.1rem}
-.notice{margin:18px 0 0}
-.character-defs{pointer-events:none}@media(max-width:1100px){.hero-characters{right:-7%;width:66%;height:420px}.hero-person-1{width:235px}.hero-person-2{width:195px}.hero-person-3{width:185px}.hero-person-4{width:175px}.hero-person-5{width:205px}.hero-person-6{width:180px}}@media(max-width:900px){.showcase-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.character-section{grid-template-columns:1fr}.hero-characters{position:relative;right:auto;bottom:auto;width:100%;height:390px;margin-top:12px;opacity:1}.hero-copy{max-width:100%}.viesyma-hero{padding-bottom:22px}.wall-person{position:absolute}}
-@media(max-width:650px){.viesyma-hero{padding:28px 18px;border-radius:24px}.hero-copy h1{font-size:clamp(3rem,16vw,4.7rem)}.hero-copy .lead{font-size:1rem}.hero-characters{height:315px;margin-top:6px;margin-left:-8px;margin-right:-8px;width:calc(100% + 16px)}.hero-person-1{right:23%;width:185px;transform:scale(1)}.hero-person-2{right:-2%;width:150px;transform:scale(.9)}.hero-person-3{right:46%;width:142px;transform:scale(.82)}.hero-person-4{right:66%;width:135px;transform:scale(.78)}.hero-person-5{right:8%;width:155px;transform:scale(.83)}.hero-person-6{right:-4%;width:140px;transform:scale(.75)}.showcase-grid,.steps{grid-template-columns:1fr}.character-section{padding:22px 16px}.character-wall{min-height:255px}.wall-1{width:145px;left:18%}.wall-2{width:125px;left:-2%}.wall-3{width:130px;right:-3%}.wall-4{width:120px;left:35%}.wall-5{width:130px;right:16%}.wall-6{width:115px;left:47%}.article{padding-top:40px}}
-
-/* Viesyma — portraits du jeu, affichage net et sans agrandissement agressif */
-.hero-characters{
-  position:absolute;right:-1%;bottom:-10px;width:min(42%,300px);
-  pointer-events:none;isolation:isolate;display:flex;align-items:flex-end;justify-content:center;
-}
-.character-portrait-wall{
-  width:100%;height:auto;display:block;
-  max-width:300px;
-  border-radius:24px;
-  filter:drop-shadow(0 18px 24px rgba(0,0,0,.36));
-  image-rendering:auto;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 10%,black 100%);
-  mask-image:linear-gradient(to bottom,transparent 0%,black 10%,black 100%);
-}
-.character-section{
-  display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:center;
-  margin-top:42px;padding:28px;border-radius:28px;
-  background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(236,72,153,.08));
-  border:1px solid rgba(255,255,255,.08);overflow:hidden;
-}
-.character-wall{
-  min-height:0;display:flex;align-items:center;justify-content:center;position:relative;
-}
-.character-wall .character-portrait-wall{
-  width:min(100%,360px);max-width:360px;border-radius:22px;
-  filter:drop-shadow(0 14px 18px rgba(0,0,0,.3));
-  -webkit-mask-image:none;mask-image:none;
-}
-@media(max-width:1100px){
-  .hero-characters{right:0;width:min(42%,360px)}
-  .character-portrait-wall{max-width:360px}
-}
-@media(max-width:900px){
-  .hero-characters{
-    position:relative;right:auto;bottom:auto;width:min(100%,360px);
-    height:auto;margin:18px auto 0;
-  }
-  .character-portrait-wall{max-width:360px;border-radius:22px}
-  .character-section{grid-template-columns:1fr}
-  .character-wall .character-portrait-wall{max-width:360px}
-}
-@media(max-width:650px){
-  .hero-characters{width:min(100%,360px);margin:12px auto 0}
-  .character-portrait-wall{max-width:360px;border-radius:18px}
-  .character-section{padding:20px 14px}
-  .character-wall .character-portrait-wall{max-width:360px}
-}
-.character-lineup{display:grid;grid-template-columns:repeat(3,180px);gap:10px;justify-content:center;align-items:center}.character-lineup img{width:180px;height:180px;object-fit:cover;display:block;border-radius:18px;image-rendering:auto}.hero-characters .character-lineup{grid-template-columns:repeat(3,90px);gap:6px}.hero-characters .character-lineup img{width:90px;height:90px;border-radius:12px}@media(max-width:900px){.character-lineup{grid-template-columns:repeat(3,1fr);width:min(100%,420px);gap:8px}.character-lineup img{width:100%;height:auto;aspect-ratio:1}.hero-characters .character-lineup{grid-template-columns:repeat(3,1fr);width:min(100%,330px)}.hero-characters .character-lineup img{width:100%;height:auto;aspect-ratio:1}}@media(max-width:650px){.character-lineup{grid-template-columns:repeat(2,1fr);width:min(100%,340px)}.hero-characters .character-lineup{grid-template-columns:repeat(3,1fr);width:min(100%,300px)}}
-
-/* Viesyma — portraits HD */
-.character-new-image{display:block;width:min(100%,540px);height:auto;max-height:none;object-fit:contain;border-radius:24px;filter:drop-shadow(0 18px 24px rgba(0,0,0,.36));image-rendering:auto}
-.hero-characters .character-new-image{width:min(100%,330px)}
-@media(max-width:900px){.character-new-image{width:min(100%,480px)}.hero-characters .character-new-image{width:min(100%,340px)}}
-@media(max-width:650px){.character-new-image{width:min(100%,360px);border-radius:18px}.hero-characters .character-new-image{width:min(100%,300px)}}
+:root{--bg:#050711;--panel:rgba(15,19,38,.76);--line:rgba(255,255,255,.11);--muted:#a9aec4;--purple:#8b5cf6;--pink:#ec4899;--blue:#38bdf8}
+*{box-sizing:border-box}
+body{background:radial-gradient(circle at 75% 5%,rgba(139,92,246,.16),transparent 32%),radial-gradient(circle at 20% 40%,rgba(56,189,248,.09),transparent 28%),var(--bg)}
+.wrap{max-width:1440px}
+.nav{position:sticky;top:14px;z-index:20;margin:14px auto 28px;padding:12px 16px;border:1px solid var(--line);border-radius:22px;background:rgba(5,7,17,.78);backdrop-filter:blur(18px);box-shadow:0 18px 60px rgba(0,0,0,.3)}
+.brand{font-weight:900;font-size:1.3rem;letter-spacing:-.04em;background:linear-gradient(90deg,#fff,#a78bfa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.navlinks{gap:24px}
+.navlinks a{opacity:.82}.navlinks a:hover{opacity:1}
+.article{padding-top:0}
+.hero{position:relative;min-height:720px;border:1px solid var(--line);border-radius:34px;overflow:hidden;background:linear-gradient(105deg,#070916 0%,#0b0d1b 46%,rgba(9,11,25,.74) 60%,rgba(9,11,25,.22) 100%);box-shadow:0 35px 100px rgba(0,0,0,.4)}
+.hero:before{content:"";position:absolute;width:600px;height:600px;right:10%;top:4%;background:radial-gradient(circle,rgba(236,72,153,.18),transparent 65%);filter:blur(20px)}
+.hero-copy{position:relative;z-index:3;width:56%;padding:80px 42px 70px 58px}
+.eyebrow{color:#c4b5fd;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;font-weight:800}
+.hero h1{font-size:clamp(4.5rem,9vw,8rem);line-height:.82;letter-spacing:-.08em;margin:16px 0 20px;background:linear-gradient(90deg,#fff 0%,#d8ccff 38%,#a78bfa 68%,#f472b6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h2{font-size:clamp(1.2rem,2.2vw,2rem);margin:0 0 22px;letter-spacing:-.03em}
+.lead{max-width:610px;font-size:1.12rem;line-height:1.7;color:#d7daea}
+.badges{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0}.badge{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.055);font-size:.86rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.btn{border-radius:16px;padding:14px 20px;font-weight:800;text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.045)}.btn.primary{border:0;background:linear-gradient(100deg,#6366f1,#8b5cf6 55%,#ec4899);box-shadow:0 12px 35px rgba(139,92,246,.28)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:620px;margin-top:32px}.stat{padding:15px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035)}.stat strong{display:block;font-size:1.05rem}.stat span{display:block;color:var(--muted);font-size:.72rem;margin-top:4px}
+.hero-art{position:absolute;z-index:2;right:-2%;top:0;width:52%;height:100%;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#070916 0%,transparent 25%,transparent 80%,rgba(5,7,17,.12));pointer-events:none}
+.hero-art img{height:96%;width:auto;max-width:none;object-fit:contain;filter:drop-shadow(-20px 25px 40px rgba(0,0,0,.5));transform:translateX(3%)}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}.feature{padding:22px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));min-height:150px}.feature .icon{font-size:1.7rem}.feature h3{margin:12px 0 6px}.feature p{color:var(--muted);font-size:.88rem;margin:0;line-height:1.55}
+.section{margin-top:22px;padding:34px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(56,189,248,.04))}
+.section h2{margin-top:0;font-size:2rem}.section p{color:#c5c9d9;line-height:1.7;max-width:850px}
+.dlc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.dlc{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.18)}.dlc strong{display:block;margin-bottom:5px}.dlc span{color:var(--muted);font-size:.85rem}
+.cta{margin-top:22px;text-align:center;padding:46px 24px;border-radius:28px;border:1px solid rgba(167,139,250,.22);background:radial-gradient(circle at 50% 0,rgba(139,92,246,.2),transparent 55%),linear-gradient(135deg,#101126,#090b17)}
+.cta h2{margin:0 0 10px;font-size:2.2rem}.cta p{color:var(--muted)}
+.footer{margin-top:24px}
+@media(max-width:1000px){.hero{min-height:0}.hero-copy{width:100%;padding:52px 28px 34px}.hero-art{position:relative;right:auto;top:auto;width:100%;height:500px}.hero-art img{height:100%;max-width:100%;width:auto}.hero-art:after{background:linear-gradient(180deg,rgba(7,9,22,.1),#070916 92%)}.features{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.nav{top:6px}.navlinks{display:none}.hero{border-radius:24px}.hero-copy{padding:38px 20px 22px}.hero h1{font-size:clamp(3.8rem,18vw,5.5rem)}.hero-art{height:420px}.features,.dlc-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.section{padding:24px 18px}}
 </style>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEXS11MEQE"></script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MEXS11MEQE');
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){var href=link.getAttribute('href')||'',text=(link.textContent||'').trim().replace(/\s+/g,' ').slice(0,100),eventName='site_click';if(href.indexOf('mailto:')===0)eventName='contact_email_click';else if(href.indexOf('/viesyma/support')===0)eventName='support_click';else if(href.indexOf('/viesyma/privacy')===0)eventName='privacy_click';else if(href.indexOf('/viesyma/terms')===0)eventName='terms_click';else if(href.indexOf('/viesyma/')===0||href==='/viesyma/')eventName='viesyma_click';else if(href.indexOf('/actualites')===0)eventName='news_click';else if(href.indexOf('#apps')===0)eventName='applications_click';gtag('event',eventName,{link_text:text,link_url:href})})})});
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MEXS11MEQE');</script>
 </head>
 <body>
 <div class="wrap">
-<nav class="nav"><a class="brand" href="/">DylanDevOS</a><div class="navlinks"><a href="/">Applications</a><a href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a href="/viesyma/support.html">Support</a></div></nav>
+<nav class="nav"><a class="brand" href="/">DylanDevOS</a><div class="navlinks"><a href="/">Accueil</a><a href="#jeu">Le jeu</a><a href="#fonctionnalites">Fonctionnalités</a><a href="/viesyma/support.html">Support</a><a href="/viesyma/privacy.html">Confidentialité</a></div></nav>
 <main class="article">
-
-<section class="viesyma-hero">
+<section class="hero" id="jeu">
 <div class="hero-copy">
-<div class="eyebrow">DylanDevOS · Jeu iOS</div>
+<div class="eyebrow">Jeu iOS · Simulation de vie</div>
 <h1>Viesyma</h1>
-<p class="lead"><strong>Une vie, des choix, mille histoires.</strong><br>Créez votre personnage, faites vos choix et découvrez jusqu'où votre vie peut vous mener.</p>
-<div class="hero-badges"><span class="hero-badge">✨ Simulation de vie</span><span class="hero-badge">🎮 Des possibilités à explorer</span><span class="hero-badge">❤️ Des histoires uniques</span></div>
-<div class="notice"><strong>Bientôt sur l’App Store.</strong><br>Le lien de téléchargement sera ajouté dès la publication officielle.</div>
+<h2>UNE VIE, DES CHOIX, MILLE HISTOIRES.</h2>
+<p class="lead">Créez votre personnage, faites vos choix, construisez votre avenir et vivez des histoires uniques. Études, travail, amour, argent, célébrité, immobilier, politique ou business : votre vie évolue avec chacune de vos décisions.</p>
+<div class="badges"><span class="badge">❤️ Relations</span><span class="badge">💼 Carrière</span><span class="badge">🏠 Immobilier</span><span class="badge">👑 Célébrité</span></div>
+<div class="actions"><a class="btn primary" href="/viesyma/support.html"> &nbsp; Télécharger bientôt</a><a class="btn" href="#fonctionnalites">▶ &nbsp; Découvrir le jeu</a></div>
+<div class="stats"><div class="stat"><strong>+100</strong><span>événements de vie</span></div><div class="stat"><strong>∞</strong><span>histoires possibles</span></div><div class="stat"><strong>6+</strong><span>grands domaines de vie</span></div><div class="stat"><strong>iOS</strong><span>iPhone &amp; iPad</span></div></div>
 </div>
-<div class="hero-characters" aria-hidden="true"><img class="character-portrait-wall character-new-image" src="/viesyma/assets/viesyma-characters-6-hd.jpg?v=1" alt="Personnages de Viesyma"></div>
+<div class="hero-art"><img src="/viesyma/assets/viesyma-characters-hq.jpg?v=30" alt="Personnages de Viesyma"></div>
 </section>
-
-<div class="section-title"><div><div class="eyebrow">Votre future vie</div><h2>Tout peut commencer ici.</h2></div><p>Une simulation pensée pour vous laisser construire votre propre histoire, à votre rythme.</p></div>
-<div class="showcase-grid">
-<div class="showcase-card"><div class="icon">🧑‍🎨</div><h3>Créez votre personnage</h3><p>Apparence, âge et personnalité : commencez avec le personnage qui vous ressemble.</p><div class="card-orb"></div></div>
-<div class="showcase-card"><div class="icon">🎓</div><h3>Tracez votre parcours</h3><p>Étudiez, travaillez, changez de voie et construisez votre avenir.</p><div class="card-orb"></div></div>
-<div class="showcase-card"><div class="icon">💞</div><h3>Vivez vos relations</h3><p>Rencontres, famille, amitiés, amour et moments qui donnent vie à votre histoire.</p><div class="card-orb"></div></div>
-<div class="showcase-card"><div class="icon">💰</div><h3>Gérez votre vie</h3><p>Revenus, dépenses, projets et patrimoine : vos décisions ont des conséquences.</p><div class="card-orb"></div></div>
-<div class="showcase-card"><div class="icon">🏢</div><h3>Développez vos projets</h3><p>Faites évoluer vos ambitions et explorez de nouvelles possibilités professionnelles.</p><div class="card-orb"></div></div>
-<div class="showcase-card"><div class="icon">✈️</div><h3>Explorez le monde</h3><p>Faites évoluer votre quotidien et laissez votre personnage découvrir de nouveaux horizons.</p><div class="card-orb"></div></div>
-<div class="showcase-card"><div class="icon">🎯</div><h3>Faites vos choix</h3><p>Chaque étape peut ouvrir une nouvelle direction. À vous de décider laquelle suivre.</p><div class="card-orb"></div></div>
-<div class="showcase-card"><div class="icon">❓</div><h3>Découvrez la suite</h3><p>Certaines possibilités ne se révèlent qu'en jouant. Tout ne se dévoile pas dès le départ.</p><div class="card-orb"></div></div>
-</div>
-
-<section class="character-section">
-<div class="character-wall" aria-hidden="true"><img class="character-portrait-wall character-new-image" src="/viesyma/assets/viesyma-characters-6-hd.jpg?v=1" alt="Personnages de Viesyma"></div></div></div>
-<div><div class="eyebrow">Des personnages, des histoires</div><h2>Donnez vie à votre personnage.</h2><p>Dans Viesyma, votre personnage n'est pas juste un avatar. Il évolue, rencontre des personnes, construit des relations, travaille, gagne de l'argent, change de projets et traverse des événements inattendus.</p><p>Vous commencez une vie. Ensuite, <strong>c'est à vous d'écrire la suite.</strong></p></div>
+<section class="features" id="fonctionnalites">
+<div class="feature"><div class="icon">❤️</div><h3>Vivez vos relations</h3><p>Rencontres, amour, famille, enfants, amis, animaux et histoires passées.</p></div>
+<div class="feature"><div class="icon">💼</div><h3>Construisez votre carrière</h3><p>Étudiez, travaillez, évoluez, changez de métier et développez vos ambitions.</p></div>
+<div class="feature"><div class="icon">🏠</div><h3>Construisez votre patrimoine</h3><p>Maisons, appartements, villas, immobilier et projets qui accompagnent votre vie.</p></div>
+<div class="feature"><div class="icon">👑</div><h3>Devenez une légende</h3><p>Musique, cinéma, réseaux sociaux, politique et business ouvrent de nouvelles voies.</p></div>
 </section>
-
-<div class="section-title"><div><div class="eyebrow">En quelques étapes</div><h2>Comment ça fonctionne ?</h2></div><p>Un principe simple, puis une infinité de chemins possibles.</p></div>
-<div class="steps">
-<div class="step"><span class="step-number">1</span><strong>Créez</strong><span>Façonnez votre personnage et commencez une nouvelle vie.</span></div>
-<div class="step"><span class="step-number">2</span><strong>Choisissez</strong><span>Prenez des décisions et ouvrez de nouvelles possibilités.</span></div>
-<div class="step"><span class="step-number">3</span><strong>Vivez</strong><span>Études, travail, relations, argent et événements évoluent avec le temps.</span></div>
-<div class="step"><span class="step-number">4</span><strong>Découvrez</strong><span>Explorez progressivement tout ce que votre histoire peut devenir.</span></div>
-</div>
-
-<section class="cta">
-<div class="eyebrow">Bientôt disponible</div>
-<h2>Prêt à vivre votre histoire ?</h2>
-<p>Viesyma arrive prochainement sur l'App Store. Préparez-vous à créer une vie qui ne ressemblera à aucune autre.</p>
-<a class="appstore" href="/viesyma/support.html" aria-label="Viesyma bientôt sur l'App Store"><span style="font-size:2rem"></span><span><small>Bientôt disponible sur</small><b>l’App Store</b></span></a>
+<section class="section">
+<div class="eyebrow">Un monde qui évolue avec vous</div><h2>Votre histoire ne ressemble à aucune autre.</h2>
+<p>Chaque décision peut modifier vos relations, votre situation financière, votre carrière et votre quotidien. Viesyma est pensé comme une simulation de vie riche, progressive et pleine de possibilités.</p>
+<div class="dlc-grid"><div class="dlc"><strong>👑 Célébrité</strong><span>Musique, cinéma, réseaux sociaux et notoriété.</span></div><div class="dlc"><strong>🏛️ Politique</strong><span>Carrière politique, influence et décisions publiques.</span></div><div class="dlc"><strong>🏢 Business</strong><span>Entreprises, employés, produits, prix et développement.</span></div><div class="dlc"><strong>🏡 Immobilier Pro</strong><span>Investissements, biens et développement immobilier.</span></div><div class="dlc"><strong>💎 Vie de Luxe</strong><span>Villas, voitures, yachts et patrimoine haut de gamme.</span></div><div class="dlc"><strong>✨ Apparence</strong><span>Personnalisez votre personnage et son évolution.</span></div></div>
 </section>
-
-<h2>Notice d'utilisation</h2>
-<p><strong>Bienvenue dans Viesyma.</strong> Le principe est simple : créez votre personnage, vivez sa vie et voyez jusqu'où vos choix peuvent vous mener.</p>
-<div class="feature-grid">
-<div class="mini-card"><strong>Créer</strong><span>Commencez une nouvelle vie et façonnez votre personnage.</span></div>
-<div class="mini-card"><strong>Choisir</strong><span>Études, travail, relations, argent… chaque décision peut ouvrir une nouvelle voie.</span></div>
-<div class="mini-card"><strong>Évoluer</strong><span>Faites grandir votre personnage et adaptez-vous aux événements qui apparaissent au fil des années.</span></div>
-<div class="mini-card"><strong>Explorer</strong><span>Découvrez progressivement les possibilités de Viesyma. Tout ne se révèle pas dès le début.</span></div>
-</div>
-<p><strong>Le meilleur conseil ?</strong> Lancez-vous et expérimentez. Certaines surprises se découvrent uniquement en jouant.</p>
-
-<div class="buttons"><a class="btn primary" href="/viesyma/support.html">Assistance</a><a class="btn" href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a class="btn" href="/viesyma/terms.html">Conditions</a></div>
+<section class="cta"><div class="eyebrow">Bientôt disponible</div><h2>Prêt à écrire votre histoire ?</h2><p>Viesyma arrive prochainement sur l’App Store.</p><a class="btn primary" href="/viesyma/support.html">En savoir plus sur Viesyma</a></section>
 </main>
 <footer class="footer"><div class="footerlinks"><a href="/">← DylanDevOS</a><a href="/viesyma/support.html">Support Viesyma</a><a href="/viesyma/privacy.html">Confidentialité &amp; RGPD</a><a href="/viesyma/terms.html">Conditions d’utilisation</a></div>© 2026 DylanDevOS — Viesyma</footer>
 </div>
